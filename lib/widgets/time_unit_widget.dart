@@ -37,7 +37,7 @@ class TimeUnitWidget extends StatelessWidget {
           Text(
             label.toUpperCase(),
             style: TextStyle(
-              fontSize: 10,
+              fontSize: 12,
               fontWeight: FontWeight.w300,
               letterSpacing: 1.5,
               color: labelColor,
