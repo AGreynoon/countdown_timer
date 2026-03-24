@@ -215,7 +215,7 @@ abstract class AppLocalizations {
   /// No description provided for @noCountdowns.
   ///
   /// In en, this message translates to:
-  /// **'No countdowns yet.'**
+  /// **'No events yet.'**
   String get noCountdowns;
 
   /// No description provided for @themeColor.
