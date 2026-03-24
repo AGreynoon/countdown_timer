@@ -1,0 +1,23 @@
+{
+  "@@locale": "ar",
+  "appTitle": "كرونوس",
+  "parisAdventure": "مغامرة باريس",
+  "graduationDay": "يوم التخرج",
+  "weddingAnniversary": "ذكرى الزواج",
+  "delete": "حذف",
+  "editMode": "وضع التعديل",
+  "eventName": "اسم الحدث",
+  "targetDate": "التاريخ المستهدف",
+  "time": "الوقت",
+  "displayUnits": "وحدات العرض",
+  "years": "سنوات",
+  "months": "أشهر",
+  "weeks": "أسابيع",
+  "days": "أيام",
+  "hours": "ساعات",
+  "minutes": "دقائق",
+  "seconds": "ثواني",
+  "anticipating": "ن ت ر ق ب",
+  "newEvent": "حدث جديد",
+  "noCountdowns": "لا توجد عدادات بعد."
+}

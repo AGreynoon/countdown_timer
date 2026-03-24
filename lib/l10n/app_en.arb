@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "appTitle": "Chronos",
+  "parisAdventure": "Paris Adventure",
+  "graduationDay": "Graduation Day",
+  "weddingAnniversary": "Wedding Anniversary",
+  "delete": "DELETE",
+  "editMode": "Edit Mode",
+  "eventName": "Event Name",
+  "targetDate": "Target Date",
+  "time": "Time",
+  "displayUnits": "Display Units",
+  "years": "Years",
+  "months": "Months",
+  "weeks": "Weeks",
+  "days": "Days",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "seconds": "Seconds",
+  "anticipating": "A N T I C I P A T I N G",
+  "newEvent": "New Event",
+  "noCountdowns": "No countdowns yet."
+}
