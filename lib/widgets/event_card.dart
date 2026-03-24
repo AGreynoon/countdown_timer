@@ -89,11 +89,14 @@ class _EventCardHeader extends StatelessWidget {
                         : AppColors.textGrey,
                   ),
                   const SizedBox(width: 4),
-                  Text(
-                    AppHelpers.formatDate(event.targetDate, localeName),
-                    style: isDarkTheme
-                        ? AppStyles.cardSubtitleLight
-                        : AppStyles.cardSubtitleDark,
+                  Expanded(
+                    child: Text(
+                      AppHelpers.formatDate(event.targetDate, localeName),
+                      style: isDarkTheme
+                          ? AppStyles.cardSubtitleLight
+                          : AppStyles.cardSubtitleDark,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),

@@ -127,7 +127,12 @@ class _AddEventState extends ConsumerState<AddEvent> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(DateFormat.yMd().format(_targetDate)),
+                          Expanded(
+                            child: Text(
+                              DateFormat.yMd().format(_targetDate),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                           const Icon(
                             Icons.calendar_today,
                             size: 20,
@@ -173,7 +178,12 @@ class _AddEventState extends ConsumerState<AddEvent> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(DateFormat.jm().format(_targetDate)),
+                          Expanded(
+                            child: Text(
+                              DateFormat.jm().format(_targetDate),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
                           const Icon(
                             Icons.access_time,
                             size: 20,

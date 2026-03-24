@@ -179,10 +179,14 @@ class _MiddleConfigSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text(
-                'Event Details',
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              const Expanded(
+                child: Text(
+                  'Event Details',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
+              const SizedBox(width: 8),
               GestureDetector(
                 onTap: onEditModeToggled,
                 child: Container(
@@ -292,7 +296,12 @@ class _MiddleConfigSection extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(DateFormat.yMd().format(event.targetDate)),
+                  Expanded(
+                    child: Text(
+                      DateFormat.yMd().format(event.targetDate),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                   const Icon(
                     Icons.calendar_today,
                     size: 20,
@@ -339,7 +348,12 @@ class _MiddleConfigSection extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(DateFormat.jm().format(event.targetDate)),
+                  Expanded(
+                    child: Text(
+                      DateFormat.jm().format(event.targetDate),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
                   const Icon(
                     Icons.access_time,
                     size: 20,
