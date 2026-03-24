@@ -19,5 +19,6 @@
   "seconds": "Seconds",
   "anticipating": "A N T I C I P A T I N G",
   "newEvent": "New Event",
-  "noCountdowns": "No countdowns yet."
+  "noCountdowns": "No countdowns yet.",
+  "themeColor": "Theme Color"
 }

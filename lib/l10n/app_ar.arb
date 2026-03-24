@@ -19,5 +19,6 @@
   "seconds": "ثواني",
   "anticipating": "ن ت ر ق ب",
   "newEvent": "حدث جديد",
-  "noCountdowns": "لا توجد عدادات بعد."
+  "noCountdowns": "لا توجد عدادات بعد.",
+  "themeColor": "لون السمة"
 }

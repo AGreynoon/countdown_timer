@@ -67,4 +67,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get noCountdowns => 'لا توجد عدادات بعد.';
+
+  @override
+  String get themeColor => 'لون السمة';
 }

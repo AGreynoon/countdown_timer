@@ -12,15 +12,15 @@ class EventCard extends StatelessWidget {
 
   const EventCard({super.key, required this.event});
 
-  @override
   Widget build(BuildContext context) {
-    bool isOrange = event.category.toLowerCase() == 'orange';
+    bool isDarkTheme = AppColors.isDarkTheme(event.category);
+    LinearGradient gradient = AppColors.getEventGradient(event.category);
 
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        gradient: isOrange ? AppColors.orangeGradient : AppColors.whiteGradient,
+        gradient: gradient,
         boxShadow: [
           BoxShadow(
             color: Colors.black.withValues(alpha: 0.05),
@@ -33,14 +33,14 @@ class EventCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _EventCardHeader(event: event, isOrange: isOrange),
+          _EventCardHeader(event: event, isDarkTheme: isDarkTheme),
           const SizedBox(height: 12),
           Consumer(
             builder: (context, ref, child) {
               final now = ref.watch(tickerProvider);
               return CountdownDisplay(
                 event: event,
-                isOrange: isOrange,
+                isDarkTheme: isDarkTheme,
                 now: now,
                 compact: true,
               );
@@ -54,9 +54,9 @@ class EventCard extends StatelessWidget {
 
 class _EventCardHeader extends StatelessWidget {
   final Event event;
-  final bool isOrange;
+  final bool isDarkTheme;
 
-  const _EventCardHeader({required this.event, required this.isOrange});
+  const _EventCardHeader({required this.event, required this.isDarkTheme});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class _EventCardHeader extends StatelessWidget {
             children: [
               Text(
                 event.title,
-                style: isOrange
+                style: isDarkTheme
                     ? AppStyles.cardTitleLight
                     : AppStyles.cardTitleDark,
               ),
@@ -80,18 +80,18 @@ class _EventCardHeader extends StatelessWidget {
               Row(
                 children: [
                   Icon(
-                    isOrange
+                    isDarkTheme
                         ? Icons.favorite_border
                         : Icons.calendar_today_outlined,
                     size: 14,
-                    color: isOrange
+                    color: isDarkTheme
                         ? AppColors.textLightGrey
                         : AppColors.textGrey,
                   ),
                   const SizedBox(width: 4),
                   Text(
                     AppHelpers.formatDate(event.targetDate, localeName),
-                    style: isOrange
+                    style: isDarkTheme
                         ? AppStyles.cardSubtitleLight
                         : AppStyles.cardSubtitleDark,
                   ),
@@ -107,14 +107,14 @@ class _EventCardHeader extends StatelessWidget {
 
 class CountdownDisplay extends StatelessWidget {
   final Event event;
-  final bool isOrange;
+  final bool isDarkTheme;
   final DateTime now;
   final bool compact;
 
   const CountdownDisplay({
     super.key,
     required this.event,
-    required this.isOrange,
+    required this.isDarkTheme,
     required this.now,
     this.compact = false,
   });
@@ -131,8 +131,8 @@ class CountdownDisplay extends StatelessWidget {
 
     List<Widget> units = [];
 
-    Color orangeNumColor = AppColors.textLight;
-    Color orangeLabelColor = AppColors.textLightGrey;
+    Color darkNumColor = AppColors.textLight;
+    Color darkLabelColor = AppColors.textLightGrey;
     Color whiteNumColor = past
         ? AppColors.destructiveRed
         : AppColors.numberBlueDark;
@@ -143,8 +143,8 @@ class CountdownDisplay extends StatelessWidget {
         TimeUnitWidget(
           value: timeMap['Years']!,
           label: l10n.years,
-          numColor: isOrange ? orangeNumColor : whiteNumColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          numColor: isDarkTheme ? darkNumColor : whiteNumColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
@@ -154,8 +154,8 @@ class CountdownDisplay extends StatelessWidget {
         TimeUnitWidget(
           value: timeMap['Months']!,
           label: l10n.months,
-          numColor: isOrange ? orangeNumColor : whiteNumColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          numColor: isDarkTheme ? darkNumColor : whiteNumColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
@@ -165,8 +165,8 @@ class CountdownDisplay extends StatelessWidget {
         TimeUnitWidget(
           value: timeMap['Weeks']!,
           label: l10n.weeks,
-          numColor: isOrange ? orangeNumColor : whiteNumColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          numColor: isDarkTheme ? darkNumColor : whiteNumColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
@@ -176,34 +176,34 @@ class CountdownDisplay extends StatelessWidget {
         TimeUnitWidget(
           value: timeMap['Days']!,
           label: l10n.days,
-          numColor: isOrange ? orangeNumColor : whiteNumColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          numColor: isDarkTheme ? darkNumColor : whiteNumColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
     }
     if (event.displayUnits['Hours'] == true) {
-      Color hColor = isOrange ? orangeNumColor : AppColors.numberBlueMid;
-      if (past && !isOrange) hColor = Colors.red[300]!;
+      Color hColor = isDarkTheme ? darkNumColor : AppColors.numberBlueMid;
+      if (past && !isDarkTheme) hColor = Colors.red[300]!;
       units.add(
         TimeUnitWidget(
           value: timeMap['Hours']!,
           label: l10n.hours,
           numColor: hColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
     }
     if (event.displayUnits['Minutes'] == true) {
-      Color mColor = isOrange ? orangeNumColor : AppColors.numberBlueLight;
-      if (past && !isOrange) mColor = Colors.red[200]!;
+      Color mColor = isDarkTheme ? darkNumColor : AppColors.numberBlueLight;
+      if (past && !isDarkTheme) mColor = Colors.red[200]!;
       units.add(
         TimeUnitWidget(
           value: timeMap['Minutes']!,
           label: l10n.minutes,
           numColor: mColor,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );
@@ -213,8 +213,8 @@ class CountdownDisplay extends StatelessWidget {
         TimeUnitWidget(
           value: timeMap['Seconds']!,
           label: l10n.seconds,
-          numColor: isOrange ? orangeNumColor : Colors.grey,
-          labelColor: isOrange ? orangeLabelColor : whiteLabelColor,
+          numColor: isDarkTheme ? darkNumColor : Colors.grey,
+          labelColor: isDarkTheme ? darkLabelColor : whiteLabelColor,
           compact: compact,
         ),
       );

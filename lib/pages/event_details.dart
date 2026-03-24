@@ -7,6 +7,7 @@ import '../models/event.dart';
 import '../providers/events_provider.dart';
 import '../providers/ticker_provider.dart';
 import '../theme/app_colors.dart';
+import '../widgets/color_picker.dart';
 import '../widgets/event_card.dart'
     show CountdownDisplay; // Reuse the display from event_card
 
@@ -110,11 +111,13 @@ class _TopCountdownCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = AppLocalizations.of(context)!;
     final now = ref.watch(tickerProvider);
+    final gradient = AppColors.getEventGradient(event.category);
+    final isDarkTheme = AppColors.isDarkTheme(event.category);
 
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        gradient: AppColors.orangeGradient,
+        gradient: gradient,
       ),
       padding: const EdgeInsets.all(32),
       child: Column(
@@ -131,14 +134,14 @@ class _TopCountdownCard extends ConsumerWidget {
           const SizedBox(height: 8),
           Text(
             event.title.isEmpty ? l10n.newEvent : event.title,
-            style: const TextStyle(
-              color: AppColors.textLight,
+            style: TextStyle(
+              color: isDarkTheme ? AppColors.textLight : AppColors.textDark,
               fontSize: 28,
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(height: 24),
-          CountdownDisplay(event: event, isOrange: true, now: now),
+          CountdownDisplay(event: event, isDarkTheme: isDarkTheme, now: now),
         ],
       ),
     );
@@ -215,6 +218,20 @@ class _MiddleConfigSection extends StatelessWidget {
               ),
             ],
           ),
+          if (isEditMode) ...[
+            const SizedBox(height: 20),
+            Text(
+              l10n.themeColor,
+              style: const TextStyle(fontSize: 12, color: AppColors.textGrey),
+            ),
+            const SizedBox(height: 12),
+            ColorPicker(
+              selectedCategory: event.category,
+              onSelected: (val) {
+                onEventChanged(event.copyWith(category: val));
+              },
+            ),
+          ],
           const SizedBox(height: 20),
           Text(
             l10n.eventName,

@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import '../models/event.dart';
 import '../providers/events_provider.dart';
 import '../theme/app_colors.dart';
+import '../widgets/color_picker.dart';
 
 class AddEvent extends ConsumerStatefulWidget {
   const AddEvent({super.key});
@@ -16,6 +17,7 @@ class AddEvent extends ConsumerStatefulWidget {
 class _AddEventState extends ConsumerState<AddEvent> {
   final TextEditingController _titleController = TextEditingController();
   DateTime _targetDate = DateTime.now().add(const Duration(days: 1));
+  String _selectedCategory = 'Orange';
   Map<String, bool> _displayUnits = {
     "Years": false,
     "Months": false,
@@ -39,7 +41,7 @@ class _AddEventState extends ConsumerState<AddEvent> {
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       title: _titleController.text.trim(),
       targetDate: _targetDate,
-      category: 'Orange', // Default
+      category: _selectedCategory,
       displayUnits: _displayUnits,
     );
 
@@ -180,6 +182,23 @@ class _AddEventState extends ConsumerState<AddEvent> {
                         ],
                       ),
                     ),
+                  ),
+                  const SizedBox(height: 20),
+                  Text(
+                    l10n.themeColor,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: AppColors.textGrey,
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  ColorPicker(
+                    selectedCategory: _selectedCategory,
+                    onSelected: (val) {
+                      setState(() {
+                        _selectedCategory = val;
+                      });
+                    },
                   ),
                 ],
               ),

@@ -67,4 +67,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noCountdowns => 'No countdowns yet.';
+
+  @override
+  String get themeColor => 'Theme Color';
 }
