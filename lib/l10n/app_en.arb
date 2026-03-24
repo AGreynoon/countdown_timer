@@ -5,7 +5,7 @@
   "graduationDay": "Graduation Day",
   "weddingAnniversary": "Wedding Anniversary",
   "delete": "DELETE",
-  "editMode": "Edit Mode",
+  "edit": "Edit",
   "eventName": "Event Name",
   "targetDate": "Target Date",
   "time": "Time",
@@ -20,5 +20,6 @@
   "anticipating": "A N T I C I P A T I N G",
   "newEvent": "New Event",
   "noCountdowns": "No countdowns yet.",
-  "themeColor": "Theme Color"
+  "themeColor": "Theme Color",
+  "eventDetails": "Event Details"
 }

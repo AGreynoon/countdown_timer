@@ -22,12 +22,7 @@ class Home extends ConsumerWidget {
           IconButton(
             icon: const Icon(Icons.language),
             onPressed: () {
-              final currentLocale = ref.read(localeProvider);
-              if (currentLocale.languageCode == 'en') {
-                ref.read(localeProvider.notifier).state = const Locale('ar');
-              } else {
-                ref.read(localeProvider.notifier).state = const Locale('en');
-              }
+              ref.read(localeProvider.notifier).toggleLocale();
             },
           ),
         ],

@@ -24,7 +24,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get delete => 'DELETE';
 
   @override
-  String get editMode => 'Edit Mode';
+  String get edit => 'Edit';
 
   @override
   String get eventName => 'Event Name';
@@ -70,4 +70,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get themeColor => 'Theme Color';
+
+  @override
+  String get eventDetails => 'Event Details';
 }

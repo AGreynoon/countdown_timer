@@ -7,8 +7,18 @@ import 'providers/locale_provider.dart';
 import 'theme/app_colors.dart';
 import 'theme/app_styles.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
+import 'package:shared_preferences/shared_preferences.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  
+  runApp(ProviderScope(
+    overrides: [
+      sharedPreferencesProvider.overrideWithValue(prefs),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends ConsumerWidget {

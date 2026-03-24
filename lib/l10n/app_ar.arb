@@ -5,7 +5,7 @@
   "graduationDay": "يوم التخرج",
   "weddingAnniversary": "ذكرى الزواج",
   "delete": "حذف",
-  "editMode": "وضع التعديل",
+  "edit": "تعديل",
   "eventName": "اسم الحدث",
   "targetDate": "التاريخ المستهدف",
   "time": "الوقت",
@@ -17,8 +17,9 @@
   "hours": "ساعات",
   "minutes": "دقائق",
   "seconds": "ثواني",
-  "anticipating": "ن ت ر ق ب",
+  "anticipating": "الحدث المرتقب",
   "newEvent": "حدث جديد",
   "noCountdowns": "لا توجد عدادات بعد.",
-  "themeColor": "لون السمة"
+  "themeColor": "لون السمة",
+  "eventDetails": "تفاصيل الحدث"
 }

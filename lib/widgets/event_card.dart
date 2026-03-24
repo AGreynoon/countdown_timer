@@ -245,13 +245,14 @@ class TimeUnitWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localeName = Localizations.localeOf(context).languageCode;
     return Padding(
       padding: EdgeInsets.only(right: compact ? 12 : 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            value.toString().padLeft(2, '0'),
+            AppHelpers.localizeNumber(value, localeName),
             style: TextStyle(
               fontSize: compact ? 32 : 42,
               fontWeight: FontWeight.bold,

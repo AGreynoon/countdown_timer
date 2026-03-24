@@ -24,7 +24,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get delete => 'حذف';
 
   @override
-  String get editMode => 'وضع التعديل';
+  String get edit => 'تعديل';
 
   @override
   String get eventName => 'اسم الحدث';
@@ -60,7 +60,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get seconds => 'ثواني';
 
   @override
-  String get anticipating => 'ن ت ر ق ب';
+  String get anticipating => 'الحدث المرتقب';
 
   @override
   String get newEvent => 'حدث جديد';
@@ -70,4 +70,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get themeColor => 'لون السمة';
+
+  @override
+  String get eventDetails => 'تفاصيل الحدث';
 }

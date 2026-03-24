@@ -179,10 +179,10 @@ class _MiddleConfigSection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'Event Details',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  l10n.eventDetails,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -209,7 +209,7 @@ class _MiddleConfigSection extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       Text(
-                        l10n.editMode,
+                        l10n.edit,
                         style: TextStyle(
                           fontSize: 12,
                           color: isEditMode ? Colors.blue : AppColors.textGrey,

@@ -128,11 +128,11 @@ abstract class AppLocalizations {
   /// **'DELETE'**
   String get delete;
 
-  /// No description provided for @editMode.
+  /// No description provided for @edit.
   ///
   /// In en, this message translates to:
-  /// **'Edit Mode'**
-  String get editMode;
+  /// **'Edit'**
+  String get edit;
 
   /// No description provided for @eventName.
   ///
@@ -223,6 +223,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Theme Color'**
   String get themeColor;
+
+  /// No description provided for @eventDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Event Details'**
+  String get eventDetails;
 }
 
 class _AppLocalizationsDelegate
