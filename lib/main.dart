@@ -1,4 +1,4 @@
-import 'package:countdown_timer/home.dart';
+import 'package:countdown_timer/pages/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

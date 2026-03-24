@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AddCountdownTimer extends StatelessWidget {
-  const AddCountdownTimer({super.key});
+class EventCard extends StatelessWidget {
+  const EventCard({super.key});
 
   @override
   Widget build(BuildContext context) {
