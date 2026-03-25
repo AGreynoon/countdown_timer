@@ -12,13 +12,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
-  
-  runApp(ProviderScope(
-    overrides: [
-      sharedPreferencesProvider.overrideWithValue(prefs),
-    ],
-    child: const MyApp(),
-  ));
+
+  runApp(
+    ProviderScope(
+      overrides: [sharedPreferencesProvider.overrideWithValue(prefs)],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends ConsumerWidget {
@@ -29,6 +29,7 @@ class MyApp extends ConsumerWidget {
     final locale = ref.watch(localeProvider);
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Chronos',
       locale: locale,
       supportedLocales: const [Locale('en'), Locale('ar')],
