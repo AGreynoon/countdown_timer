@@ -30,7 +30,7 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'until',
+      title: 'Until',
       locale: locale,
       supportedLocales: const [Locale('en'), Locale('ar')],
       localizationsDelegates: const [
