@@ -82,4 +82,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get errorFutureDate => 'Target date must be in the future';
+
+  @override
+  String get eventCreated => 'Event created successfully!';
+
+  @override
+  String get eventCreationFailed => 'Failed to create event.';
 }

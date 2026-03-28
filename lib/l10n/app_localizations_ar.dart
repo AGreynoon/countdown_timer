@@ -82,4 +82,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get errorFutureDate => 'يجب أن يكون التاريخ في المستقبل';
+
+  @override
+  String get eventCreated => 'تم إنشاء الحدث بنجاح!';
+
+  @override
+  String get eventCreationFailed => 'فشل في إنشاء الحدث.';
 }

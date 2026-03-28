@@ -24,5 +24,7 @@
   "themeColor": "لون السمة",
   "eventDetails": "تفاصيل الحدث",
   "errorEmptyName": "يرجى إدخال اسم الحدث",
-  "errorFutureDate": "يجب أن يكون التاريخ في المستقبل"
+  "errorFutureDate": "يجب أن يكون التاريخ في المستقبل",
+  "eventCreated": "تم إنشاء الحدث بنجاح!",
+  "eventCreationFailed": "فشل في إنشاء الحدث."
 }

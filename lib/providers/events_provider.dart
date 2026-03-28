@@ -23,6 +23,7 @@ class EventsNotifier extends AsyncNotifier<List<Event>> {
     } catch (e, st) {
       state = previousState;
       state = AsyncValue.error(e, st);
+      rethrow;
     }
   }
 

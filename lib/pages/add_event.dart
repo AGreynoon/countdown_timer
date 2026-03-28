@@ -35,15 +35,19 @@ class _AddEventState extends ConsumerState<AddEvent> {
     super.dispose();
   }
 
-  void _createEvent() {
+  Future<void> _createEvent() async {
     final l10n = AppLocalizations.of(context)!;
-
+    
     if (!_formKey.currentState!.validate()) return;
 
     if (_targetDate.isBefore(DateTime.now())) {
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(SnackBar(content: Text(l10n.errorFutureDate)));
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(l10n.errorFutureDate),
+          backgroundColor: AppColors.destructiveRed,
+          behavior: SnackBarBehavior.floating,
+        ),
+      );
       return;
     }
 
@@ -55,8 +59,29 @@ class _AddEventState extends ConsumerState<AddEvent> {
       displayUnits: _displayUnits,
     );
 
-    ref.read(eventsProvider.notifier).addEvent(newEvent);
-    Navigator.pop(context);
+    try {
+      await ref.read(eventsProvider.notifier).addEvent(newEvent);
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.eventCreated),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        Navigator.pop(context);
+      }
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(l10n.eventCreationFailed),
+            backgroundColor: AppColors.destructiveRed,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+    }
   }
 
   @override

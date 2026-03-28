@@ -247,6 +247,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Target date must be in the future'**
   String get errorFutureDate;
+
+  /// No description provided for @eventCreated.
+  ///
+  /// In en, this message translates to:
+  /// **'Event created successfully!'**
+  String get eventCreated;
+
+  /// No description provided for @eventCreationFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to create event.'**
+  String get eventCreationFailed;
 }
 
 class _AppLocalizationsDelegate

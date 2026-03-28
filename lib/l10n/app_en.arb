@@ -24,5 +24,7 @@
   "themeColor": "Theme Color",
   "eventDetails": "Event Details",
   "errorEmptyName": "Please enter an event name",
-  "errorFutureDate": "Target date must be in the future"
+  "errorFutureDate": "Target date must be in the future",
+  "eventCreated": "Event created successfully!",
+  "eventCreationFailed": "Failed to create event."
 }
