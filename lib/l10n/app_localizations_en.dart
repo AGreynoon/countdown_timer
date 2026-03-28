@@ -76,4 +76,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get eventDetails => 'Event Details';
+
+  @override
+  String get errorEmptyName => 'Please enter an event name';
+
+  @override
+  String get errorFutureDate => 'Target date must be in the future';
 }

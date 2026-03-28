@@ -76,4 +76,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get eventDetails => 'تفاصيل الحدث';
+
+  @override
+  String get errorEmptyName => 'يرجى إدخال اسم الحدث';
+
+  @override
+  String get errorFutureDate => 'يجب أن يكون التاريخ في المستقبل';
 }

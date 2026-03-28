@@ -22,5 +22,7 @@
   "noEventsYet": "No events yet.",
   "startAdding": "Tap the + button to start adding events!",
   "themeColor": "Theme Color",
-  "eventDetails": "Event Details"
+  "eventDetails": "Event Details",
+  "errorEmptyName": "Please enter an event name",
+  "errorFutureDate": "Target date must be in the future"
 }

@@ -235,6 +235,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Event Details'**
   String get eventDetails;
+
+  /// No description provided for @errorEmptyName.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter an event name'**
+  String get errorEmptyName;
+
+  /// No description provided for @errorFutureDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Target date must be in the future'**
+  String get errorFutureDate;
 }
 
 class _AppLocalizationsDelegate

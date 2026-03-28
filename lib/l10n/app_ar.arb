@@ -22,5 +22,7 @@
   "noEventsYet": "لا يوجد أي حدث بعد.",
   "startAdding": "اضغط على زر + للبدء في إضافة حدث!",
   "themeColor": "لون السمة",
-  "eventDetails": "تفاصيل الحدث"
+  "eventDetails": "تفاصيل الحدث",
+  "errorEmptyName": "يرجى إدخال اسم الحدث",
+  "errorFutureDate": "يجب أن يكون التاريخ في المستقبل"
 }
