@@ -4,6 +4,7 @@ import 'package:countdown_timer/l10n/app_localizations.dart';
 import '../providers/events_provider.dart';
 import '../providers/locale_provider.dart';
 import '../widgets/event_card.dart';
+import '../theme/app_colors.dart';
 import 'event_details.dart';
 import 'add_event.dart';
 
@@ -30,7 +31,36 @@ class Home extends ConsumerWidget {
       body: eventsAsyncValue.when(
         data: (events) {
           if (events.isEmpty) {
-            return Center(child: Text(l10n.noCountdowns));
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    Icons.event_note_outlined,
+                    size: 80,
+                    color: AppColors.orangePrimary.withAlpha(100),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    l10n.noEventsYet,
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textDark,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    l10n.startAdding,
+                    style: const TextStyle(
+                      fontSize: 14,
+                      color: AppColors.textGrey,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ],
+              ),
+            );
           }
           return ListView.builder(
             itemCount: events.length,

@@ -13,12 +13,12 @@ class LocaleNotifier extends Notifier<Locale> {
   Locale build() {
     final prefs = ref.watch(sharedPreferencesProvider);
     final savedCode = prefs.getString(_localeKey);
-    return Locale(savedCode ?? 'en');
+    return Locale(savedCode ?? 'ar');
   }
 
   void toggleLocale() {
     final prefs = ref.read(sharedPreferencesProvider);
-    final newLocale = state.languageCode == 'en' ? const Locale('ar') : const Locale('en');
+    final newLocale = state.languageCode == 'ar' ? const Locale('en') : const Locale('ar');
     prefs.setString(_localeKey, newLocale.languageCode);
     state = newLocale;
   }

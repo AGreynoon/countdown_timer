@@ -212,11 +212,17 @@ abstract class AppLocalizations {
   /// **'New Event'**
   String get newEvent;
 
-  /// No description provided for @noCountdowns.
+  /// No description provided for @noEventsYet.
   ///
   /// In en, this message translates to:
   /// **'No events yet.'**
-  String get noCountdowns;
+  String get noEventsYet;
+
+  /// No description provided for @startAdding.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the + button to start adding events!'**
+  String get startAdding;
 
   /// No description provided for @themeColor.
   ///

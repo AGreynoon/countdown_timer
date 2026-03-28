@@ -32,58 +32,6 @@ class LocalEventRepository {
         display_units TEXT NOT NULL
       )
     ''');
-    
-    // Insert initial events as shown in the UI mockup
-    final parisEvent = Event(
-      id: "paris_adventure",
-      title: "Paris Adventure",
-      targetDate: DateTime.now().add(const Duration(days: 154, hours: 14, minutes: 32, seconds: 45)),
-      category: "Orange",
-      displayUnits: {
-        "Years": true,
-        "Months": true,
-        "Weeks": true,
-        "Days": true,
-        "Hours": true,
-        "Minutes": true,
-        "Seconds": true,
-      },
-    );
-    await db.insert('events', parisEvent.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
-    
-    final graduationEvent = Event(
-      id: "graduation_day",
-      title: "Graduation Day",
-      targetDate: DateTime.now().add(const Duration(days: 35, hours: 8)),
-      category: "White",
-      displayUnits: {
-        "Years": false,
-        "Months": false,
-        "Weeks": false,
-        "Days": true,
-        "Hours": true,
-        "Minutes": false,
-        "Seconds": false,
-      },
-    );
-    await db.insert('events', graduationEvent.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
-
-    final weddingEvent = Event(
-      id: "wedding_anniversary",
-      title: "Wedding Anniversary",
-      targetDate: DateTime.now().add(const Duration(days: 148, hours: 2)),
-      category: "Orange",
-      displayUnits: {
-        "Years": false,
-        "Months": false,
-        "Weeks": false,
-        "Days": true,
-        "Hours": true,
-        "Minutes": false,
-        "Seconds": false,
-      },
-    );
-    await db.insert('events', weddingEvent.toMap(), conflictAlgorithm: ConflictAlgorithm.replace);
   }
 
   Future<Event?> getEvent(String id) async {

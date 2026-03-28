@@ -19,7 +19,8 @@
   "seconds": "ثواني",
   "anticipating": "الحدث المرتقب",
   "newEvent": "حدث جديد",
-  "noCountdowns": "لا توجد أحداث بعد.",
+  "noEventsYet": "لا يوجد أي حدث بعد.",
+  "startAdding": "اضغط على زر + للبدء في إضافة حدث!",
   "themeColor": "لون السمة",
   "eventDetails": "تفاصيل الحدث"
 }

@@ -66,7 +66,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get newEvent => 'حدث جديد';
 
   @override
-  String get noCountdowns => 'لا توجد أحداث بعد.';
+  String get noEventsYet => 'لا يوجد أي حدث بعد.';
+
+  @override
+  String get startAdding => 'اضغط على زر + للبدء في إضافة حدث!';
 
   @override
   String get themeColor => 'لون السمة';

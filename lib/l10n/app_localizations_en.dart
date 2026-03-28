@@ -66,7 +66,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get newEvent => 'New Event';
 
   @override
-  String get noCountdowns => 'No events yet.';
+  String get noEventsYet => 'No events yet.';
+
+  @override
+  String get startAdding => 'Tap the + button to start adding events!';
 
   @override
   String get themeColor => 'Theme Color';
